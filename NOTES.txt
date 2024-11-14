@@ -48,3 +48,16 @@ This function doesn't even read from the state of the app — its return value d
 Note: It may be hard to remember when to mark functions as pure/view. Luckily the Solidity compiler is good about issuing warnings to let you know when you should use one of these modifiers.
 
 -----
+
+Chapter 7: Storage vs Memory (Data location)
+In Solidity, there are two locations you can store variables — in storage and in memory.
+
+Storage refers to variables stored permanently on the blockchain. Memory variables are temporary, and are erased between external function calls to your contract. Think of it like your computer's hard disk vs RAM.
+
+Most of the time you don't need to use these keywords because Solidity handles them by default. State variables (variables declared outside of functions) are by default storage and written permanently to the blockchain, while variables declared inside functions are memory and will disappear when the function call ends.
+
+However, there are times when you do need to use these keywords, namely when dealing with structs and arrays within functions.
+
+-----
+
+
